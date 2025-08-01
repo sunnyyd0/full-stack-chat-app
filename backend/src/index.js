@@ -2,7 +2,7 @@ import express from "express";
 import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.route.js";
 import dotenv, { config } from "dotenv";
-import cookieParese from "cookie-parser";
+import cookieParser from "cookie-parser";
 import cors from "cors";
 import { conncetDb } from "./lib/db.js";
 import { app, server } from "./lib/socket.js";
@@ -10,7 +10,7 @@ import path from "path";
 dotenv.config();
 const __dirname = path.resolve();
 app.use(express.json());
-app.use(cookieParese());
+app.use(cookieParser());
 app.use(
   cors({
     origin: "http://localhost:5173",
